@@ -1,4 +1,5 @@
 // Given variables
+// array of data
 const dishData = [
     {
         name: "Italian pasta",
@@ -17,15 +18,19 @@ const dishData = [
         price: 6.45
     },
 ]
+
 const tax = 1.20;
 
 
+
 // Implement getPrices()
-function getPrices(taxBoolean) {
+// function to get the final price
+function getPrices(taxBoolean) 
+{
+    //  looping over Objects in array of data
     for (obje of dishData)
     {
         var finalPrice;
-        // start looping over Objects
         if (taxBoolean == true)
         {
             finalPrice = Object.values(obje)[1] * tax;
@@ -34,18 +39,23 @@ function getPrices(taxBoolean) {
         {
             finalPrice = Object.values(obje)[1];
         }
-        else {
+        else 
+        {
             console.log("You need to pass a boolean to the getPrices call!");
             return (`to "jump out" of the further function execution`);
         }
-         // end looping over all Objects inside the array.
         console.log("Dish: ", Object.values(obje)[0], "Price: $", finalPrice);
     }
+     // end looping over all Objects inside the array.
 }
+// end function of getprices
+
 // getPrices(true);
 // getPrices(false);
 // getPrices();
 
+
+// this function to withdrow the discount from price.
 function getDiscount(taxBoolean , guests )
 {
     getPrices(taxBoolean)
@@ -72,5 +82,7 @@ function getDiscount(taxBoolean , guests )
 
 getDiscount(true, 2);
 getDiscount(false, 10);
+getDiscount();
+getDiscount("hello");
 
 
